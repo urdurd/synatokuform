@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<link rel="stylesheet" style="text/css" href="style.css">
+<link rel="stylesheet" media="(max-width:800px)" href="mobilestyle.css">
+<title>My Example</title>
+
+
+
+</head>
+<body>
+
+<form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+
+
+<p>
+<label>Framkvæmt af
+<input type="text" name="employee_name" required>
+</label> 
+</p>
+
+<p>
+<label>Hola 
+<input type="text" name="hole_name" required>
+</label>
+</p>
+
+
+<p>
+<label>Dagsetning
+<input type="date" name="dagsetning" required>
+</label>
+</p>
+	
+
+<p>
+<label>Staðsetning
+<p onload= "getLocation()" id="demo"></p>
+</label>
+</p>
+
+<p>
+<label>Veður 
+<input type="text" name="weather" required>
+</label>
+</p>
+
+<p>
+<label>Loftþrýstingur 
+<input type="text" name="pressure" required>
+</label>
+</p>
+
+<p>
+<label>Rakastig 
+<input type="text" name="humidity" required>
+</label>
+</p>
+
+
+<p>
+<label>Athugasemdir (Púlsar hola eða er eitthvað annað athugavert)
+<textarea name="comments" maxlength="500"></textarea>
+</label>
+</p>
+
+<p><button>Skrá</button></p>
+
+</form>
+
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
